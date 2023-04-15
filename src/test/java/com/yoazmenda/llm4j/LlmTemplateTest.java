@@ -7,7 +7,7 @@ import junit.framework.TestSuite;
 /**
  * Unit test for simple App.
  */
-public class LLMTemplateTest 
+public class LlmTemplateTest
     extends TestCase
 {
     /**
@@ -15,7 +15,7 @@ public class LLMTemplateTest
      *
      * @param testName name of the test case
      */
-    public LLMTemplateTest( String testName )
+    public LlmTemplateTest(String testName )
     {
         super( testName );
     }
@@ -25,7 +25,7 @@ public class LLMTemplateTest
      */
     public static Test suite()
     {
-        return new TestSuite( LLMTemplateTest.class );
+        return new TestSuite( LlmTemplateTest.class );
     }
 
     /**
