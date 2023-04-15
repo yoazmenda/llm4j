@@ -8,7 +8,6 @@ public class OpenAILlm implements LlmProvider {
     private String modelName;
     private Double temperature;
     private Integer maxTokens;
-
     private OpenAiService service;
 
     public OpenAILlm(String apiKey, String modelName, Double temperature, Integer maxTokens) {
