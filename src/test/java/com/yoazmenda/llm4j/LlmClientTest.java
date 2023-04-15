@@ -21,7 +21,7 @@ public class LlmClientTest {
         assertEquals(completions, "Hi there");
     }
 
-    @Test
+    @Test(enabled = false)
     public void testOpenAILLM() throws LlmClientException {
         LlmProvider llmProvider = new OpenAILlm(System.getenv("OPENAI_API_KEY"), "text-davinci-003", 0D, 10);
         LlmClient llmClient = new LlmClient(llmProvider);
@@ -29,7 +29,7 @@ public class LlmClientTest {
         assertEquals(completions, "\n\nx");
     }
 
-    @Test
+    @Test(enabled = false)
     public void testHuggingFaceLLM() throws LlmClientException {
         LlmProvider llmProvider = new HuggingFaceLlm("gpt2", System.getenv("HF_API_KEY"), 0D, 10);
         LlmClient llmClient = new LlmClient(llmProvider);
