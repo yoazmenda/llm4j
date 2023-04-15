@@ -1,19 +1,18 @@
 package com.yoazmenda.llm4j.provider;
 
-public class HuggingFaceLlm implements LlmProvider {
-    private String apiKey;
-    private String modelName;
-    private Integer maxTokens;
+import com.yoazmenda.HuggingFaceInference;
 
-    public HuggingFaceLlm(String apiKey, String modelName, Integer maxTokens) {
-        //todo: implement
-        this.apiKey = apiKey;
-        this.modelName = modelName;
-        this.maxTokens = maxTokens;
+import java.io.IOException;
+
+public class HuggingFaceLlm implements LlmProvider {
+    private final HuggingFaceInference huggingFaceInference;
+
+    public HuggingFaceLlm(String repoId, String apiKey, Double temperature, Integer maxTokens) {
+        huggingFaceInference = new HuggingFaceInference(repoId, apiKey, temperature, maxTokens);
     }
 
     @Override
-    public String getCompletions(String prompt) {
-        return "";
+    public String getCompletions(String prompt) throws IOException {
+        return huggingFaceInference.infer(prompt);
     }
 }
