@@ -4,14 +4,12 @@ import com.theokanning.openai.OpenAiService;
 import com.theokanning.openai.completion.CompletionRequest;
 
 public class OpenAILlm implements LlmProvider {
-    private String apiKey;
     private String modelName;
     private Double temperature;
     private Integer maxTokens;
     private OpenAiService service;
 
     public OpenAILlm(String apiKey, String modelName, Double temperature, Integer maxTokens) {
-        this.apiKey = apiKey;
         this.modelName = modelName;
         this.temperature = temperature;
         this.maxTokens = maxTokens;
@@ -23,6 +21,8 @@ public class OpenAILlm implements LlmProvider {
         CompletionRequest completionRequest = CompletionRequest.builder()
                 .prompt(prompt)
                 .model(modelName)
+                .maxTokens(maxTokens)
+                .temperature(temperature)
                 .build();
         return service.createCompletion(completionRequest).getChoices().get(0).getText();
     }

@@ -9,14 +9,10 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNotNull;
 
-/**
- * Unit test for LlmTemplate
- */
 public class LlmClientTest {
 
     @Test
-    public void testTestLLMTemplate()
-    {
+    public void testTestLLMTemplate() {
         LlmProvider llmProvider = new TestLlmProvider();
         LlmClient llmClient = new LlmClient(llmProvider);
         String completions = llmClient.getCompletions("Hi there");
@@ -25,12 +21,10 @@ public class LlmClientTest {
     }
 
     @Test
-    public void testOpenAILLMTemplate()
-    {
+    public void testOpenAILLMTemplate() {
         LlmProvider llmProvider = new OpenAILlm(System.getenv("OPENAI_API_KEY"), "text-davinci-003", 0.2, 1);
         LlmClient llmClient = new LlmClient(llmProvider);
         String completions = llmClient.getCompletions("Please respond with this exact character: x");
-        assertNotNull(completions.trim());
         assertEquals(completions, "\n\nx");
     }
 }
