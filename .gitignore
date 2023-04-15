@@ -1,0 +1,23 @@
+# Compiled class files
+*.class
+
+# Log files
+*.log
+
+# Package files
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Maven and Gradle build directories
+target/
+build/
+
+# Maven wrapper files
+.mvn/wrapper/maven-wrapper.jar
+
+# Gradle wrapper files
+gradle/wrapper/grad
